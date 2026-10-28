@@ -236,7 +236,7 @@
   const MAX_LV = LEVELS.length - 1;
 
   // 整体尺寸系数（相对棋盘宽度，越大越难）
-  const RS = 1.52;
+  const RS = 1.15;
   for (let i = 0; i < LEVELS.length; i++) LEVELS[i].r = +(LEVELS[i].r * RS).toFixed(1);
 
   /* 校徽与校名章：WebP 直接内嵌，无外部依赖、无同级目录要求 */
