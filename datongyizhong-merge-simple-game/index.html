@@ -268,14 +268,14 @@
   const W = 420, H = 640;
   const SPAWN_Y = 66;
   const DEATH_Y = 106;
-  const G = 1900;
+  const G = 1600;
   // 碰撞手感：原来 REST 只有 0.08、切向摩擦 0.36，两颗球会互相“粘”住；
   // 现在提高弹性、降低切向摩擦，变成轻轻一碰就弹开。
-  const REST = 0.52;         // 球与球：碰撞弹得更明显
+  const REST = 0.43;         // 球与球：碰撞弹得更明显
   const REST_FLOOR = 0.34;   // 球与地面：能弹起，但不会一直乱跳
   const REST_WALL = 0.46;    // 球与两侧墙
   const FRICTION = 0.075;    // 切向摩擦
-  const DANGER_TIME = 2.4;   // 稳定越线 2.4 秒才失败
+  const DANGER_TIME = 15;   // 稳定越线 15 秒才失败
   const DANGER_SPEED = 72;   // 仍在快速运动或弹跳时，不累计失败时间
   const HIT_FX_V = 150;      // 撞击超过这个相对法向速度才出小火花
   const PI2 = Math.PI * 2;
@@ -341,7 +341,7 @@
      5. 工具
      ============================================================ */
   function pickLevel(){
-    const weights = [35, 30, 20, 10, 5];
+    const weights = [25, 25, 20, 15, 15];
     let total = 0;
     for (let i = 0; i < weights.length; i++) total += weights[i];
     let r = Math.random() * total;
